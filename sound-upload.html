@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Heart Sound</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+    <style>
+    .button {
+        display: inline-block;
+        padding: 5px 100px;
+        justify-content: space-evenly;
+        background-color: #ff8080;
+        color: #fff;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="nav-container">
+        <nav>
+           
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+    <ul class="nav-links">
+        <a href="{{ url_for('home') }}" class="button">Home</a>
+        <a href="{{ url_for('health_info') }}" class="button">Heartbeat Analysis</a>
+        <a href="{{ url_for('tutorial') }}" class="button">Tutorial</a>
+        <a href="{{ url_for('prediction_form') }}" class="button">Health Info</a>
+    </ul>
+</nav>
+    <h1>Upload Heart Sound</h1>
+    <form action="/upload-sound" method="POST" enctype="multipart/form-data">
+        <input type="file" name="heart_sound" accept="audio/*" required>
+        <button type="submit">Upload and Analyze</button>
+    </form>
+</body>
+</html>

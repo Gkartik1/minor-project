@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Heart Health and Disease Safety Measures</title>
+    <style>
+
+
+
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #ff6b6b;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #ff6b6b;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            font-size: 1.5rem;
+        }
+
+        .tips {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tip {
+            flex: 1 1 calc(33.333% - 20px);
+            margin: 10px;
+            background-color: #ffe8e8;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .tip h3 {
+            margin-top: 0;
+            color: #ff4d4d;
+        }
+
+        .tip img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .foot {
+            background-color: #ff8080;
+            text-align: center;
+            justify-content: space-evenly;
+            color: rgb(100, 95, 95);
+            padding: 18px 15px;
+            border-radius: 5px;
+           
+            letter-spacing: 1px;
+           
+           
+        }
+        
+        .foo {
+            background-color: #ff8080;
+          
+            
+            color: rgb(100, 95, 95);
+            padding: 5px 10px;
+           
+            
+        
+            
+           
+        }
+
+
+
+    
+    .button {
+        display: inline-block;
+        padding: 5px 100px;
+        background-color: #ff8080;
+        color: #fff;
+        justify-content: space-evenly;
+        border-radius: 5px;
+        margin-top: 20px;
+        text-decoration: none;
+        font-weight: bold;
+        letter-spacing: 1px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    
+    .nav-container {
+            background-color:#fffcfc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+        
+            top: 0;
+            z-index: 1000;
+        }
+
+       
+
+        
+
+        
+    
+
+       
+        
+
+        .video-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .video-container video {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Heart Health and Disease Safety Measures</h1>
+    </header>
+    <div class="nav-container">
+        <nav>
+            
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+
+
+    <ul class="nav-links">
+        <a href="{{ url_for('home') }}" class="button">Home</a>
+        <a href="{{ url_for('sound_upload') }}" class="button">Heartbeat Analysis</a>
+        <a href="{{ url_for('tutorial') }}" class="button">Tutorial</a>
+        <a href="{{ url_for('prediction_form') }}" class="button">Health Info</a>
+    </ul>
+</nav>
+    <div class="container">
+        <section class="section">
+            <h2>Understanding Heart Health</h2>
+            <p>Heart health is essential to maintaining overall well-being. The heart is a powerful muscle responsible for pumping blood throughout the body. Taking good care of your heart can prevent heart diseases like heart attack, stroke, and coronary artery disease. It is important to maintain a balanced diet, exercise regularly, and avoid stress to keep your heart healthy. <br>
+            
+                <b>A heart health report can include a cardiovascular health score, blood pressure, and other information about your heart health:</b> <br>
+                <b>Cardiovascular health score</b> <br>
+                The American Heart Association calculates a cardiovascular health score from 0 to 100 points based on eight health measures. A score below 50 indicates poor cardiovascular health, 50–79 is moderate, and 80 and above is high.  <br>
+               <b> Blood pressure</b> <br>
+                A healthy blood pressure is 120/80, and 140/90 is normal for most people. Higher blood pressure readings can increase the risk of heart attack or stroke. 
+               <b> Risk assessment</b> <br>
+                A healthcare provider can use a risk calculator to estimate your risk of heart attack, stroke, or death from heart or blood vessel disease. Risk factors include high blood pressure, cholesterol, age, sex, race, smoking, and medications. 
+                
+
+            </p>
+        </section>
+
+        <section class="section video-container">
+            <h2>For More Information about Heart Attack, Risk factors, <br> Formation of a blood clot and symptoms </h2>
+            <video width="500px" 
+            height="400px" 
+            controls="controls" autoplay>
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <section class="section">
+            <h2>Heart Attack Signs & Safety Measures to Prevent Heart Disease</h2>
+            <div class="tips">
+                
+                    <div class="tip">
+                        <h3>Heart Attack Warning Signs</h3>
+                        <img src="https://www.nhlbi.nih.gov/sites/default/files/2022-09/NHLBI%20Signs%20of%20A%20Heart%20Attack.gif" alt="No Smoking GIF">
+                        <p>Symptoms can vary from person to person like Chest Pain, Shortness of breath,Lightheadedness or dizziness and some people may have no symptoms. If you think someone might be having a heart attack, call emergency services immediately
+
+                            <br>
+                           <b> A heart attack can have many warning signs, including: <br></b>
+<b>Chest pain: </b> The most common symptom, chest pain can feel like pressure, tightness, squeezing, or aching in the center or left side of the chest. The pain may come and go.<br>
+
+<b>Pain in other parts of the body:</b> Pain can spread from the chest to the arms, jaw, neck, back, or upper belly. <br>
+<b>Shortness of breath:</b> You might gasp for breath or feel like you need to take in deep breaths. <br>
+<b>Sweating: </b>You might break out into a sweat for no reason. <br>
+<b>Feeling sick:</b> You might feel sick to your stomach or vomit. <br>
+<b>Lightheadedness or dizziness:</b> You might feel dizzy or like you might pass out. <br>
+                        </p>
+                    </div>
+<div class="tip">
+                    <h3>Eat a Healthy Diet</h3>
+                    <img src="https://www.nhlbi.nih.gov/sites/default/files/2021-03/https___wcms.nhlbi_.nih_.gov_sites_default_files_2021-03_Healthy_Eating_191205.gif" alt="Healthy Diet GIF">
+                    <p>A heart-healthy diet is rich in fruits, vegetables, whole grains, and lean proteins. Avoid processed foods and limit your salt and sugar intake and can help protect your heart and reduce your risk of heart attack, stroke, and other health issues.  <br><b>Some benefits of a heart-healthy diet include:</b> <br>
+                        <b>Improved cholesterol:</b> A heart-healthy diet can help you reduce bad cholesterol (LDL) and increase good cholesterol (HDL). <br>
+                         <b> Better blood pressure:</b> A heart-healthy diet can help you manage your blood pressure. <br>
+                       <b> Reduced risk of type 2 diabetes:</b> A heart-healthy diet can help lower your risk of type 2 diabetes. <br>
+                       <b> Reduced risk of heart rhythm disorders:</b> A heart-healthy diet can help reduce your risk of heart rhythm disorders <br>
+                        
+</p>
+</div>
+
+                <div class="tip">
+                    <h3>Stay Hydrated</h3>
+                    <img src="https://www.nhlbi.nih.gov/sites/default/files/2024-03/THT_Cardi-O_Stay_Hydr_V2.gif" alt="Healthy Diet GIF">
+                    <p>Staying hydrated can help your heart by making it easier to pump blood throughout your body. Dehydration can cause your blood to thicken, which can increase the risk of heart attacks and blood clots <br>
+                        <b>Heart function <br>
+                            </b>
+When you're hydrated, your heart can pump blood more efficiently through your blood vessels to your muscles. This helps your muscles work more effectively. <br>
+<b>
+Electrolyte balance <br>
+</b>
+Your heart relies on a balance of electrolytes like sodium, potassium, and magnesium to keep its rhythm steady. Without enough electrolytes, you may experience irregular heartbeats <br>
+<b> Here are some tips to stay hydrated: </b> <br> 
+
+Add some lemon or fruit to your water <br>
+Set reminders to drink water regularly <br>
+Limit your salt intake <br>
+Avoid sugary drinks 
+
+                    </p>
+                </div>
+
+                <div class="tip">
+                    <h3>Exercise Regularly</h3>
+                    <img src="https://www.nhlbi.nih.gov/sites/default/files/2021-03/OurHearts_Physical%20Activity_191205.gif" alt="Exercise GIF">
+                    <p>Regular physical activity strengthens the heart, improves circulation, and helps control weight. Aim for at least 30 minutes of exercise daily.
+                        <br>
+                       <b> Regular exercise has many benefits for your heart, including: <br></b>
+<b>Lowering risk factors <br></b>
+Exercise can reduce your risk of heart disease by lowering blood pressure, cholesterol, and triglyceride levels. It can also help you maintain a healthy weight, which is a major risk factor for heart disease. <br>
+<b>Improving circulation <br></b>
+Exercise strengthens your heart and improves circulation, which increases oxygen levels in your body. <br>
+<b>Reducing inflammation <br></b>
+Exercise can reduce C-reactive protein (CRP), a sign of inflammation and an increased risk of heart disease. <br>
+<b>Reducing stress  <br></b>
+
+Exercise can help reduce stress, which may contribute to other risk factors for heart disease. 
+                    </p>
+                </div>
+            
+        </section>
+
+       
+
+        <section class="section">
+            <h2>Key Symptoms to Look Out For</h2>
+            <ul>
+                <li>Chest pain or discomfort</li>
+                <li>Shortness of breath</li>
+                <li>Cold sweat</li>
+                <li>Lightheadedness</li>
+                <li>Fatigue</li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="foot">  
+                <a href="{{ url_for('home') }}" class="foo"> HeartHealth AI</a>
+                    <a href="{{ url_for('prediction_form') }}" class="foo">Prediction Form</a>
+                    <a href="{{ url_for('sound_upload') }}" class="foo">Heartbeat Analysis</a>
+                    <a href="{{ url_for('tutorial') }}" class="foo">Tutorial</a>
+                    <a href="{{ url_for('health_info') }}" class="foo">Health Info</a>
+            
+        
+        <p > 2024 Heart Health Awareness. All rights reserved.</p>
+    </div>
+
+</body>
+</html>

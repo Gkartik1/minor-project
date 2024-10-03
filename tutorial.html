@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1518384401463-00d69a4b7ee8?auto=format&fit=crop&w=1567&q=80') no-repeat center center/cover;
+            color: #fff;
+        }
+
+        .heartbeat-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .heart {
+            width: 80px;
+            height: 80px;
+            background-color: #f74a6e;
+            position: relative;
+            margin: 0 auto 20px auto;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            width: 80px;
+            height: 80px;
+            background-color: #f74a6e;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -40px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 40px;
+            top: 0;
+        }
+
+        @keyframes heartbeat {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            10%, 30%, 50%, 70%, 90% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            color: #f74a6e;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        /* Option Section */
+        .option-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 50px 0;
+        }
+
+        .option {
+            width: 48%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            color: #333;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .option img, .option video {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            height: 33%;
+        }
+
+        .option h2 {
+            margin-top: 20px;
+            color: #f74a6e;
+            font-size: 24px;
+        }
+
+        .option p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 100px;
+            justify-content: space-evenly;
+            background-color: #ff8080;
+            color: #fff;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .button:hover {
+            background-color: #d93b5c;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Tutorial Step Style */
+        .steps-container {
+            text-align: left;
+            background-color: #fafafa;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            color: #333;
+            position: relative;
+            z-index: 1;
+        }
+
+        .steps-container h3 {
+            color: #f74a6e;
+            margin-bottom: 20px;
+        }
+
+        .step {
+            margin-bottom: 20px;
+        }
+
+        .step p {
+            margin-left: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heartbeat Animation -->
+    <div class="heartbeat-container">
+        <div class="heart"></div>
+    </div>
+    <div class="nav-container">
+        <nav>
+            
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+
+    <ul class="nav-links"></ul>
+        <a href="{{ url_for('home') }}" class="button">Home</a>
+        <a href="{{ url_for('health_info') }}" class="button">Heartbeat Analysis</a>
+        <a href="{{ url_for('sound_upload') }}" class="button">Tutorial</a>
+        <a href="{{ url_for('prediction_form') }}" class="button">Health Info</a>
+    </ul>
+</nav>
+
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <p>Choose one of the two methods below to predict the risk of heart disease: by analyzing heart sounds or using personal health parameters.</p>
+
+        <div class="option-container">
+            <!-- Option 1: Sound File -->
+            <div class="option">
+                <h2>Option 1: Predict Using a Heart Sound File</h2>
+                <p>This method analyzes the acoustic properties of heart sounds to detect potential anomalies. A trained AI model listens to the sound file and identifies irregularities that could indicate conditions like arrhythmias or murmurs.</p>
+                <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHVsMm84ZWNta3hzYTNqZW52cWl4cTgwM3JscHozOGhhaTRueTJwZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/rMfiAUhjQW4aQ/giphy.webp" alt="Heart Sound GIF">
+                <a href="{{ url_for('sound_upload') }}" class="button">Use Sound Prediction</a>
+
+                <!-- Steps for Sound File Analysis -->
+                <div class="steps-container">
+                    <h3>Steps to Record and Analyze Your Heartbeat:</h3>
+                    <div class="step">
+                        <strong>Step 1:</strong> <span class="tooltip">Record Your Heartbeat
+                        <span class="tooltip-text">Use your smartphone or a digital stethoscope to record your heartbeat.</span>
+                        </span>
+                        <p>Ensure that you are in a quiet room and record at least 10 seconds of clear heart sounds.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 2:</strong> Save the File
+                        <p>Save the recording in a supported format (e.g., .mp3, .wav).</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 3:</strong> Upload the File
+                        <p>Click the 'Upload Sound File' button to submit your recording.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 4:</strong> Analyze the Results
+                        <p>The AI model will process the sound and display the prediction of potential heart diseases.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Option 2: Health Parameters -->
+            <div class="option">
+                <h2>Option 2: Predict Using Health Parameters</h2>
+                <p>By entering various key health metrics such as age, gender, cholesterol levels, blood pressure, and lifestyle factors (e.g., smoking or exercise), an AI model predicts your risk of heart disease based on clinical data patterns.</p>
+                <img src="https://www.nhlbi.nih.gov/sites/default/files/2021-03/https___wcms.nhlbi_.nih_.gov_sites_default_files_2021-03_Healthy_Stats_191205.gif" alt="Health Parameters GIF">
+                <a href="{{ url_for('prediction_form') }}" class="button">Use Clinical Assessment</a>
+
+                <!-- Steps for Health Parameters Prediction -->
+                <div class="steps-container">
+                    <h3>Steps to Predict Using Health Parameters:</h3>
+                    <div class="step">
+                        <strong>Step 1:</strong> Collect All Required Health Reports
+                        <p>Gather your latest reports for cholesterol levels, blood pressure, ECG results, and any other relevant medical information.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 2:</strong> Enter Your Parameters
+                        <p>Fill in your health details, including age, gender, cholesterol levels, blood pressure, smoking habits, and physical activity levels in the provided fields.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 3:</strong> Click the 'Predict' Button
+                        <p>After entering your details, click the 'Predict' button to let the AI analyze the data.</p>
+                    </div>
+                    <div class="step">
+                        <strong>Step 4:</strong> Review the Results
+                        <p>The AI model will provide a detailed report, indicating your risk level for heart disease along with any recommended actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Heart Disease Prediction System &copy; 2024 | Your Health, Our Priority</p>
+    </footer>
+
+</body>
+</html>
