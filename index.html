@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Health AI - Home</title>
+    <link rel="icon" type="image/png" href="https://w7.pngwing.com/pngs/153/865/png-transparent-red-heart-with-beat-illustration-heart-electrocardiography-pulse-heartbeat-cartoon-love-cartoon-character-other.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -143,6 +144,36 @@
             transform: translateY(-5px);
         }
 
+
+        .foot {
+            background-color: #ff8080;
+            text-align: center;
+            justify-content: space-evenly;
+            color: rgb(100, 95, 95);
+            padding: 18px 15px;
+            border-radius: 5px;
+           
+            letter-spacing: 1px;
+           
+           
+        }
+
+
+        .foo {
+            background-color: #ff8080;
+          
+            
+            color: rgb(100, 95, 95);
+            padding: 5px 10px;
+           
+            
+        
+            
+           
+        }
+
+
+
         .feature-card i {
             font-size: 2.5rem;
             color: #e74c3c;
@@ -235,9 +266,23 @@
                 <h2>Health Education</h2>
                 <a href="{{ url_for('health_info') }}" class="button">Access comprehensive resources <br> about heart health and <br> disease prevention.</a>
             </div>
-        </section>
-    </main>
 
+
+        </section>
+    
+        
+    </main>
+    
+    <div class="foot">  
+        <a href="{{ url_for('home') }}" class="foo"> HeartHealth AI</a>
+            <a href="{{ url_for('prediction_form') }}" class="foo">Prediction Form</a>
+            <a href="{{ url_for('sound_upload') }}" class="foo">Heartbeat Analysis</a>
+            <a href="{{ url_for('tutorial') }}" class="foo">Tutorial</a>
+            <a href="{{ url_for('health_info') }}" class="foo">Health Info</a>
+    
+
+<p > 2024 Heart Health Awareness. All rights reserved.</p>
+</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuIcon = document.querySelector('.menu-icon');
